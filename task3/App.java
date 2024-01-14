@@ -1,2 +1,7 @@
-package task3;public class App {
+package task3;
+
+public class App {
+    public static void main(String[] args) {
+        
+    }
 }
