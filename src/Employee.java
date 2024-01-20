@@ -1,9 +1,11 @@
-public class Employee extends People{
+public class Employee extends People implements Comparable<Employee>{
     private int experience;
+    private int reportCardID;
 
-    public Employee(String firstName, String secondName, int age, int experience) {
-        super(firstName, secondName, age);
+    public Employee(String firstName, String secondName, int age, String phone, int experience, int reportCardID) {
+        super(firstName, secondName, age, phone);
         this.experience = experience;
+        this.reportCardID = reportCardID;
     }
 
 
@@ -11,14 +13,22 @@ public class Employee extends People{
         return experience;
     }
 
-
+    public int getReportCardID() {
+        return reportCardID;
+    }
     @Override
     public String toString() {
-        return "Employee{" +
-                "firstName='" + getFirstName() + '\'' +
-                ", secondName='" + getSecondName() + '\'' +
-                ", age=" + getAge() +
-                "experience=" + experience +
+        return "Сотрудник{Табельный номер = " +reportCardID +
+                ", Имя='" + getFirstName() + '\'' +
+                ", Фамилия='" + getSecondName() + '\'' +
+                ", возвраст=" + getAge() +
+                ", опыт=" + experience +
                 '}';
+    }
+
+
+    @Override
+    public int compareTo(Employee o) {
+        return reportCardID - o.reportCardID;
     }
 }

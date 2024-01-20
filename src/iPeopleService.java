@@ -1,6 +1,17 @@
 import java.util.List;
 
-public interface iEmployeeService<T> {
+public interface iPeopleService<T> {
+    /**
+     * Получить список
+     * @return
+     */
     List<T> getAll();
-    void create(String firstName, String secondName, int age);
+
+    /**
+     * Добавить в список
+     * @param firstName
+     * @param secondName
+     * @param age
+     */
+    void create(String firstName, String secondName, int age,String phone, int experience);
 }
