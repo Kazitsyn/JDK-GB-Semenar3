@@ -38,15 +38,12 @@ public class Philosopher extends Thread{
                 if (left.isOnTable() && right.isOnTable()){
                     left.setOnTable(false);
                     right.setOnTable(false);
-                    if (eatThink){
+                    if (eatThink) {
                         eat();
-                    }else {
-                        left.setOnTable(true);
-                        right.setOnTable(true);
-                        think();
                     }
                 }
-                sleep(1000);
+                think();
+//                sleep(1000);
             } catch (InterruptedException e) {
                 e.getMessage();
                 interrupt();
